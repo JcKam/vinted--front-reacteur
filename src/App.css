@@ -1,0 +1,75 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: sans-serif;
+  text-align: center;
+
+  --spacings-0: 0;
+  --spacings-XXS: 0.25rem;
+  --spacings-XS: 0.5rem;
+  --spacings-S: 1rem;
+  --spacings-M: 1.5rem;
+  --spacings-L: 2rem;
+  --spacings-XL: 3rem;
+  --spacings-XXL: 4rem;
+  --sizes-XS-font-size: 0.85rem;
+  --sizes-XS-line-height: 1.5;
+
+  /* FONT-SIZE-BASE */
+  --sizes-S-font-size: 1rem;
+  --sizes-S-line-height: 1.5;
+
+  /* FONT-SIZE-H4 */
+  --sizes-M-font-size: 1rem;
+  --sizes-M-line-height: 1.5;
+
+  /* FONT-SIZE-H3 */
+  --sizes-L-font-size: 1.25rem;
+  --sizes-L-line-height: 1.35;
+
+  /* FONT-SIZE-H2 */
+  --sizes-XL-font-size: 1.5rem;
+  --sizes-XL-line-height: 1.25;
+
+  /* FONT-SIZE-H1 */
+  --sizes-XXL-font-size: 1.7rem;
+  --sizes-XXL-line-height: 1.25;
+
+  /* FONT-SIZE-ICON */
+  --common-icon-font-size: 1.25rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+h1,
+.title-head-1 {
+  font-size: var(--sizes-XXL-font-size);
+  font-weight: 800;
+  line-height: var(--sizes-XXL-line-height);
+}
+h2,
+.title-head-2 {
+  font-size: var(--sizes-XL-font-size);
+  font-weight: 600;
+  line-height: var(--sizes-XL-line-height);
+}
+h3,
+.title-head-3 {
+  font-size: var(--sizes-L-font-size);
+  font-weight: 600;
+  line-height: var(--sizes-L-line-height);
+}
+h4,
+.title-head-4 {
+  font-size: var(--sizes-M-font-size);
+  font-weight: 600;
+  line-height: var(--sizes-M-line-height);
+}
