@@ -1,16 +1,26 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Home = ({ offers, setOffers }) => {
+  const [offer, setOffer] = useState([]);
+
+  // Faire une fonction qui permet à clique de chaque offre
+  // De récupérer l'API
+
   return (
-    <main>
-      <h2>Home</h2>
+    <main className="container debug" offers={offers}>
+      <h2>Page Home</h2>
       <ul>
-        {/* {console.log(data.offers)} */}
-        <li offers={offers}>
-          {offers.map((offer, id) => {
-            return <p key={offer.id}>{offer.product_name}</p>;
-          })}
-        </li>
+        {offers.map((offer) => {
+          return (
+            <li key={offer._id} className="debug">
+              <Link to={"/offer/" + offer._id} className="card">
+                <h3>{offer.product_name}</h3>
+                <p>{offer._id}</p>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
       {/* <p>{data.count}</p> */}

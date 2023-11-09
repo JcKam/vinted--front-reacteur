@@ -1,0 +1,21 @@
+@import "../Design-tokens.css";
+
+:root {
+  --commons-button-radius-border: var(--spacings-XS);
+  --commons-button-size-padding-y: var(--spacings-XS);
+  --commons-button-size-padding-x: var(--spacings-M);
+  --commons-button-onlyIcon-size-padding-x: var(--spacings-S);
+}
+
+.input {
+  width: 300px;
+  border: 1px solid #d3d3d3;
+  outline: none;
+  height: 2.5rem;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fcf9f9;
+  padding-left: 10px;
+  margin: 5px 0 0;
+  width: 100%;
+}

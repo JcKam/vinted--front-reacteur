@@ -11,6 +11,7 @@ import Header from "./components/Header";
 // Styles
 import "./App.css";
 import "./utilities.css";
+import "./components/button.css";
 
 function App() {
   const [data, setData] = useState([]);
@@ -45,7 +46,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home offers={data.offers} />} />
-          <Route path="/Offer/:id" element={<Offer />} />
+          <Route path="/offer/:id" element={<Offer />} />
+          <Route path="*" element={<p>All</p>} />
         </Routes>
       </Router>
     </>
