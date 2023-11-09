@@ -1,17 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Home = ({ offers, setOffers }) => {
   const [offer, setOffer] = useState([]);
 
-  // Faire une fonction qui permet à clique de chaque offre
-  // De récupérer l'API
+  const [data, setData] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
-  return (
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://lereacteur-vinted-api.herokuapp.com/offers"
+        );
+        // console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response.data);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return isLoading ? (
+    <p>Loading...</p>
+  ) : (
     <main className="container debug" offers={offers}>
       <h2>Page Home</h2>
       <ul>
-        {offers.map((offer) => {
+        {data.offers.map((offer) => {
           return (
             <li key={offer._id} className="debug">
               <Link to={"/offer/" + offer._id} className="card">

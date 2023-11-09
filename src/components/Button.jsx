@@ -4,13 +4,12 @@ const Button = ({ style, type, label, size, disabled }) => {
   return (
     <button
       type={type}
-      style={style}
-      size={size}
       disabled={disabled}
-      className="button button-primary"
+      className={style + " " + size + " button"}
     >
       {label}
     </button>
   );
 };
+
 export default Button;

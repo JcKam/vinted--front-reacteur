@@ -1,7 +1,7 @@
 @import "../Design-tokens.css";
 
 :root {
-  --commons-button-radius-border: var(--spacings-XS);
+  --commons-button-radius-border: var(--spacings-XXS);
   --commons-button-size-padding-y: var(--spacings-XS);
   --commons-button-size-padding-x: var(--spacings-M);
   --commons-button-onlyIcon-size-padding-x: var(--spacings-S);
@@ -69,4 +69,19 @@
 .button-primary:focus {
   box-shadow: var(--commons-boxShadow-focus);
   outline: none;
+}
+
+/*SIZE*/
+
+.button-xs {
+  font-size: 75%;
+  padding: 0.25rem 0.75rem;
+}
+.button-md {
+  font-size: 100%;
+  padding: 0.5rem 1rem;
+}
+.button-lg {
+  font-size: 125%;
+  padding: 1rem 1.25rem;
 }
