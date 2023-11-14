@@ -4,7 +4,7 @@ import { useState } from "react";
 // COMPONENTS
 import Input from "../components/Input";
 import Button from "../components/Button";
-import Checkbox from "../components/checkbox";
+// import Checkbox from "../components/checkbox";
 
 const Signup = () => {
   // Ces 3 states sont relié aux input correspondants
@@ -61,15 +61,14 @@ const Signup = () => {
           helpMessage="8 caractère minimum"
         />
         <div className="input-group">
-          <Checkbox
+          {/* <Checkbox
             id="idNewsletter"
             label="S'inscrire à notre newsletter"
             type="checkbox"
             placeholder="Fernand Naudin"
             setState={setNewsLetter}
-            Z
             value={newsLetter}
-          />
+          /> */}
         </div>
         <Button
           label="S'inscrire"
