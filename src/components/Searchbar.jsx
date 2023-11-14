@@ -3,7 +3,7 @@ import "./searchbar.css";
 const Searchbar = ({ id, type, placeholder, value, disabled }) => {
   return (
     <input
-      className="input searchbar"
+      className="searchbar_input"
       id={id}
       type={type}
       placeholder={placeholder}

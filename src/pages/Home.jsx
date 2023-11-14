@@ -14,7 +14,6 @@ const Home = ({ offers, setOffers }) => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -27,7 +26,7 @@ const Home = ({ offers, setOffers }) => {
   return isLoading ? (
     <p>Loading...</p>
   ) : (
-    <main className="container debug" offers={offers}>
+    <main className="container debug">
       <h2>Page Home</h2>
       <ul>
         {data.offers.map((offer) => {
@@ -35,6 +34,11 @@ const Home = ({ offers, setOffers }) => {
             <li key={offer._id} className="debug">
               <Link to={"/offer/" + offer._id} className="card">
                 <h3>{offer.product_name}</h3>
+                <img
+                  className="img"
+                  src={offer.product_image.secure_url}
+                  alt=""
+                />
                 <p>{offer._id}</p>
               </Link>
             </li>

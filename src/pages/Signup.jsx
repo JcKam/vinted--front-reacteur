@@ -4,13 +4,15 @@ import { useState } from "react";
 // COMPONENTS
 import Input from "../components/Input";
 import Button from "../components/Button";
+import Checkbox from "../components/checkbox";
 
 const Signup = () => {
   // Ces 3 states sont relié aux input correspondants
-  const [email, setEmail] = useState("");
   const [userName, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setconfirmPassword] = useState("");
+  const [newsLetter, setNewsLetter] = useState(false);
+  const [showError, setShowError] = useState("");
 
   // Fonction qui est déclenchée lors de la soumission du formulaire
   const handleSubmit = (event) => {
@@ -31,14 +33,52 @@ const Signup = () => {
       <h2>S'inscrire</h2>
       <form onSubmit={handleSubmit}>
         <Input
-          id="idName"
+          id="idUserName"
           label="Name"
+          name="name"
           type="text"
           placeholder="Fernand Naudin"
           setState={setUsername}
           value={userName}
+          required={true}
         />
-        <Button label="S'inscrire" />
+        <Input
+          id="idEmail"
+          label="E-mail"
+          name="email"
+          type="email"
+          placeholder="distributeurdebourpifs@gmail.com"
+          setState={setEmail}
+          value={email}
+        />
+        <Input
+          id="idPassWord"
+          label="Password"
+          name="password"
+          type="password"
+          placeholder="Password"
+          setState={setPassword}
+          helpMessage="8 caractère minimum"
+        />
+        <div className="input-group">
+          <Checkbox
+            id="idNewsletter"
+            label="S'inscrire à notre newsletter"
+            type="checkbox"
+            placeholder="Fernand Naudin"
+            setState={setNewsLetter}
+            Z
+            value={newsLetter}
+          />
+        </div>
+        <Button
+          label="S'inscrire"
+          disabled="disabled"
+          size="button-lg"
+          style="button-primary"
+          type="submit"
+        />
+        {showError && <p>{showError}</p>}
       </form>
     </main>
   );

@@ -31,9 +31,28 @@ const Offer = () => {
     <p>Loading ...</p>
   ) : (
     <main className="container debug2">
-      <h2>Offer</h2>Je suis sur la page Offer, son id est
-      <Link to="/" className="debug">
-        Retour
+      <img className="img" src={data.product_image.secure_url} alt="" />
+      <h2>Offer</h2>Je suis sur la page Offer, son id est {id}
+      <h3>{data.product_name}</h3>
+      {data.product_details.map((detail, index) => {
+        const ObjectKeys = Object.keys(detail);
+        // Object.keys Extrait les clefs de l'objet
+        // Object.value Pour extraire la valeur d'une clé
+        console.log(ObjectKeys);
+        const ObjectKey = ObjectKeys[0];
+        console.log(ObjectKey);
+        return (
+          <p key={index}>
+            {ObjectKey} : {detail[ObjectKey]}
+          </p>
+        );
+      })}
+      <br></br>
+      <Link to="/" className="button button-secondary">
+        Retour à la liste des offres
+      </Link>
+      <Link to="/" className="button button-primary">
+        Acheter
       </Link>
     </main>
   );

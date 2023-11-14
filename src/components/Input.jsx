@@ -1,3 +1,5 @@
+import "./input.css";
+
 const Input = ({
   state,
   setState,
@@ -5,6 +7,7 @@ const Input = ({
   type,
   id,
   name,
+  required,
   errorMessage,
   errorStatus,
   helpMessage,
@@ -16,6 +19,7 @@ const Input = ({
       <label className="input-label" htmlFor={id}>
         {label}&nbsp;
         <small>{helpMessage}</small>
+        <small>(Required)</small>
       </label>
       <input
         className={state ? " input input-error" : "input "}
@@ -24,6 +28,8 @@ const Input = ({
         name={name}
         onChange={(event) => {
           setState(event.target.value);
+          console.log(event);
+          console.log(event.target.value);
         }}
         placeholder={placeholder}
         value={value}
@@ -31,7 +37,7 @@ const Input = ({
 
       {state === true && (
         <p className="input-help" aria-labelledby={id}>
-          {errorMessage}
+          {showError}
         </p>
       )}
       {/* <FontAwesomeIcon icon="envelope" className="envelope" /> */}

@@ -33,6 +33,8 @@
   font-size: var(--sizes-standard-font-size);
   font-weight: 600;
   line-height: var(--sizes-standard-line-height);
+  margin-left: var(--spacings-XS);
+  margin-left: var(--spacings-XS);
   padding: var(--commons-button-size-padding-y)
     var(--commons-button-size-padding-x);
   position: relative;
@@ -84,4 +86,9 @@
 .button-lg {
   font-size: 125%;
   padding: 1rem 1.25rem;
+}
+
+/*STATE*/
+.button:disabled {
+  cursor: default;
 }

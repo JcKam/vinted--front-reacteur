@@ -1,0 +1,9 @@
+@import "../Design-tokens.css";
+
+.header {
+  padding: var(--spacings-S);
+}
+.link_home_header {
+  color: var(--color-brand-800);
+  text-decoration: none;
+}
